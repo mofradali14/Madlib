@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %} Madlibs {% endblock %}
+{% block content %}
+    <h1>Madlibs Generator</h1>
+    <form action="/story">
+        {% for word in prompts %}
+        <div>
+            <label for="{{word}}">{{word}}: </label>
+            <input type="text" name='{{word}}'> 
+        </div>
+        {% endfor %}
+        <button>Submit</button>
+    </form>
+{%endblock%}
